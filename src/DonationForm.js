@@ -12,7 +12,7 @@ const DonationForm = ({type}) => {
   const [dropOffLocations, setDropOffLocations] = useState([]);
   const [center, setCenter] = useState({ lat: 37.7749, lng: -122.4194 });
   const [zoom, setZoom] = useState(11);
-  const Marker = ({ lat, lng }) => <div className="marker" style={{ backgroundColor: 'red', width: '20px', height: '20px', borderRadius: '50%' }}></div>;
+  const Marker = ({ lat, lng }) => <div className="marker"></div>;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -35,7 +35,7 @@ const DonationForm = ({type}) => {
 
   const fetchLocations = async (zipCode) => {
     // fetch locations based on zip code using the Google Maps API
-    const response = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${zipCode}&radius=5000&type=establishment&key=${process.env.REACT_APP_MAP_API_KEY}`);
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${zipCode}&key=${process.env.REACT_APP_MAP_API_KEY}`);
     const data = await response.json();
 
     // extract the latitude and longitude coordinates of the locations
@@ -44,11 +44,6 @@ const DonationForm = ({type}) => {
       lng: result.geometry.location.lng,
     }));
 
-    if (locations.length > 0) {
-      const { lat, lng } = locations[0];
-      setCenter({ lat, lng });
-      setZoom(14);
-    }
     return locations;
   };
 

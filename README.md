@@ -32,7 +32,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### CHANGELOG
 
 Added Home, Donate, and Request pages
+Added Login, Signup, Navbar
 
 ### Bugs/Changes to be made
 
 The map doesn't highlight the locations though the API is getting hit and sending the data successfully.
+Currently just storing email, password in firebase. Have to store all other details.

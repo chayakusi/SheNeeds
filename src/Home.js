@@ -4,6 +4,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import CountUp from 'react-countup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import Navbar from './Components/Navbar';
 
 const HomePage = () => {
   const numPeopleInNeed = 10000; // replace with actual data
@@ -11,6 +12,8 @@ const HomePage = () => {
   const impact = numDonations * 10; // replace with actual calculation
 
   return (
+    <>
+    <Navbar />
     <Container>
       <Row>
         <Col>
@@ -53,6 +56,7 @@ const HomePage = () => {
         </Col>
       </Row>
     </Container>
+    </>
   );
 };
 
