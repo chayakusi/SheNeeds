@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
-import GoogleMapReact from 'google-map-react';
+import Map from './Map';
 
-const DonationForm = ({type}) => {
+const DonationForm = ({ type }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,8 +12,8 @@ const DonationForm = ({type}) => {
   const [dropOffLocations, setDropOffLocations] = useState([]);
   const [center, setCenter] = useState({ lat: 37.7749, lng: -122.4194 });
   const [zoom, setZoom] = useState(11);
-  const Marker = ({ lat, lng }) => <div className="marker" style={{ backgroundColor: 'red', width: '20px', height: '20px', borderRadius: '50%' }}></div>;
-
+  const [selectedLocation, setSelectedLocation] = useState(null);
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
@@ -42,6 +42,7 @@ const DonationForm = ({type}) => {
     const locations = data.results.map((result) => ({
       lat: result.geometry.location.lat,
       lng: result.geometry.location.lng,
+      formatted_address: result.formatted_address,
     }));
     
     if (locations.length > 0) {
@@ -52,20 +53,14 @@ const DonationForm = ({type}) => {
     return locations;
   };
 
+  const handleMapClick = () => {
+    setSelectedLocation(null);
+  };
+
   return (
     <Container>
       {dropOffLocations.length > 0 ? (
-        <div style={{ height: "400px", width: "100%" }}>
-          <GoogleMapReact
-            bootstrapURLKeys={{ key: "AIzaSyDTfhI-ZbPtq69HUxbt1WhMhW2KZo9lDTs" }}
-            defaultCenter={center}
-            defaultZoom={zoom}
-          >
-            {dropOffLocations.map((location, index) => (
-              <Marker key={index} lat={location.lat} lng={location.lng} />
-            ))}
-          </GoogleMapReact>
-        </div>
+        <Map dropOffLocations={dropOffLocations} center={center} zoom={zoom} selectedLocation={selectedLocation} onMapClick={handleMapClick} onMarkerClick={setSelectedLocation} />
       ) : (
         <div>
           <Form onSubmit={handleSubmit} className="d-flex flex-column align-items-center justify-content-center">
