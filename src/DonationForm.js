@@ -24,7 +24,7 @@ const DonationForm = ({ type }) => {
 
   async function getNearbyZipCodes(zipcode) {
     const apiKey = "a68586b0-cd4a-11ed-bd6a-e3a5f3227fd9";
-    const radius = 10;
+    const radius = 50;
     const url = `https://app.zipcodebase.com/api/v1/radius?apikey=${apiKey}&code=${zipcode}&radius=${radius}&country=us`;
 
     try {
