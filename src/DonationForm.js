@@ -22,6 +22,21 @@ const DonationForm = ({ type }) => {
     }));
   };
 
+  async function getNearbyZipCodes(zipcode) {
+    const apiKey = "a68586b0-cd4a-11ed-bd6a-e3a5f3227fd9";
+    const radius = 10;
+    const url = `https://app.zipcodebase.com/api/v1/radius?apikey=${apiKey}&code=${zipcode}&radius=${radius}&country=us`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const res = data.results.map((zip) => zip.code);
+      console.log(res)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (type === 'donate') {
@@ -29,6 +44,9 @@ const DonationForm = ({ type }) => {
     } else if (type === 'request') {
       alert('Your request has been submitted!');
     }
+
+    //  getNearbyZipCodes(formData.zipCode)    //get list of nearby zipcodes
+
     const locations = await fetchLocations(formData.zipCode);
     setDropOffLocations(locations);
   };
@@ -60,8 +78,10 @@ const DonationForm = ({ type }) => {
   return (
     <Container>
       {dropOffLocations.length > 0 ? (
+        <>
         <Map dropOffLocations={dropOffLocations} center={center} zoom={zoom} selectedLocation={selectedLocation} onMapClick={handleMapClick} onMarkerClick={setSelectedLocation} />
-      ) : (
+        </>
+        ) : (
         <div className='request-section'>
           <Form onSubmit={handleSubmit} className="d-flex flex-column align-items-center justify-content-center">
             <Row className="mb-3">

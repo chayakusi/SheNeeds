@@ -9,7 +9,6 @@ import './App.css';
 import './LearnMore.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-
 const HomePage = () => {
   const numPeopleInNeed = 10000; // replace with actual data
   const numDonations = 500; // replace with actual data
