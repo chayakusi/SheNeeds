@@ -1,0 +1,97 @@
+.learn-more-container {
+max-width: 800px;
+margin: 0 auto;
+}
+
+.learn-more-header {
+text-align: center;
+margin-bottom: 50px;
+}
+
+.learn-more-header h1 {
+font-size: 3rem;
+margin-bottom: 20px;
+}
+
+.learn-more-header p {
+font-size: 1.5rem;
+}
+
+.learn-more-section {
+margin-bottom: 50px;
+}
+
+.learn-more-section h2 {
+font-size: 2rem;
+margin-bottom: 20px;
+}
+
+.learn-more-section p {
+font-size: 1.25rem;
+line-height: 1.5;
+}
+
+.learn-more-section ul {
+list-style: disc;
+margin-left: 20px;
+}
+
+.learn-more-section li {
+font-size: 1.25rem;
+line-height: 1.5;
+margin-bottom: 10px;
+}
+
+.learn-more-section p:last-child {
+margin-bottom: 0;
+}
+
+a {
+color: #c2185b;
+}
+
+a:hover {
+color: #c2185b;
+}
+  
+a:active {
+color: #d81b60;
+}
+  
+.btn-primary {
+background-color: #c2185b !important;
+border-color: #c2185b !important;
+}
+
+.btn-primary:hover {
+background-color: #f48fb1 !important;
+border-color: #f48fb1 !important;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+background-color: #d81b60;
+border-color: #d81b60;
+}
+  
+@media screen and (max-width: 768px) {
+    .learn-more-header h1 {
+        font-size: 2rem;
+    }
+
+    .learn-more-header p {
+        font-size: 1.25rem;
+    }
+
+    .learn-more-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .learn-more-section p {
+        font-size: 1rem;
+    }
+
+    .learn-more-section li {
+        font-size: 1rem;
+    }
+}

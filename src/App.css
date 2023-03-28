@@ -24,10 +24,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +31,97 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Navbar */
+.navbar {
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: #c2185b;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #c2185b;
+}
+
+.count {
+  color: #c2185b;
+  font-weight: bold;
+}
+
+.cover-story {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cover-story h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #c2185b;
+}
+
+.cover-story p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.cover-story a {
+  background-color: #c2185b;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+
+/* Home Stats */
+.home-stat {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.home-stat h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #c2185b;
+}
+
+.home-stat p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+/* Request Section */
+.request-section {
+  background-color: #f3f3f3;
+  padding: 4rem;
+  text-align: center;
+}
+
+.request-section h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.request-section p {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
 }

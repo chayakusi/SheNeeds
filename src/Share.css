@@ -1,0 +1,83 @@
+.share-container {
+    margin-top: 3rem;
+  }
+  
+  .share-header {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .share-subheader {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .share-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  .share-card {
+    margin-bottom: 2rem;
+  }
+  
+  .share-card-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .share-card-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .share-button {
+    margin-top: 2rem;
+  }
+
+  .social-media-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-media-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-color: #c2185b;
+    border-radius: 50%;
+    margin-right: 10px;
+    color: #fff;
+    background-color: #c2185b;
+    transition: background-color 0.3s ease;
+  }
+  
+  .social-media-icons a:hover {
+    border-color: #f48fb1;
+    background-color: #f48fb1;
+  }
+  
+  .social-media-icons a:active {
+    border-color: #c2185b !important;
+    background-color: #c2185b !important;
+  }
+  
+  .social-media-icons a:last-child {
+    margin-right: 0;
+  }
+  
+  .social-media-icons i {
+    font-size: 18px;
+  }
+  
+  .social-media-icons button:focus {
+    outline: none;
+  }
+  
