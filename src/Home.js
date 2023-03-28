@@ -5,6 +5,9 @@ import CountUp from 'react-countup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Navbar from './Components/Navbar';
+import './App.css';
+import './LearnMore.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 
 const HomePage = () => {
@@ -20,7 +23,7 @@ const HomePage = () => {
         <Col>
           <div className="cover-story">
             <h1>Help Provide Sanitary Pads to Girls in Need</h1>
-            <p>There are over <CountUp end={numPeopleInNeed} duration={5} separator="," /> girls in need of sanitary pads in our community. Your donation can make a big impact!</p>
+            <p>There are over <CountUp className='count' end={numPeopleInNeed} duration={5} separator="," /> girls in need of sanitary pads in our community. Your donation can make a big impact!</p>
             <Button variant="primary" size="lg" as={Link} to="/donate">Donate Now</Button>
           </div>
         </Col>
@@ -49,7 +52,7 @@ const HomePage = () => {
           </div>
         </Col>
       </Row>
-      <Row className="mt-5">
+      <Row className="mt-5 request-section">
         <Col>
           <h2>Request Sanitary Pads</h2>
           <p>If you or someone you know needs sanitary pads, please fill out our request form.</p>

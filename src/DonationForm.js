@@ -62,7 +62,7 @@ const DonationForm = ({ type }) => {
       {dropOffLocations.length > 0 ? (
         <Map dropOffLocations={dropOffLocations} center={center} zoom={zoom} selectedLocation={selectedLocation} onMapClick={handleMapClick} onMarkerClick={setSelectedLocation} />
       ) : (
-        <div>
+        <div className='request-section'>
           <Form onSubmit={handleSubmit} className="d-flex flex-column align-items-center justify-content-center">
             <Row className="mb-3">
             <Form.Group as={Col} controlId="formName">

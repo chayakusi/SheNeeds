@@ -1,0 +1,42 @@
+.volunteer-container {
+    margin-top: 3rem;
+  }
+  
+  .volunteer-header {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .volunteer-subheader {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .volunteer-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  .volunteer-card {
+    margin-bottom: 2rem;
+  }
+  
+  .volunteer-card-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .volunteer-card-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .volunteer-button {
+    margin-top: 2rem;
+  }
+  
