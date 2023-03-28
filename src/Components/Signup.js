@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Input, Radio } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from '../firebase';
+import { auth, database } from '../firebase';
+
 import './Signup.css'
 
 function Signup() {
@@ -16,20 +17,30 @@ function Signup() {
     setIsOrganization(e.target.value);
   };
 
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
-    handleSignup(values.email, values.password)
-  };
-
-  const handleSignup = async (email,password) => {
+  const handleSignup = async (values) => {
+    const { email, password, name, age, contactNo, gender, isOrganization, organizationName, address } = values;
     try {
       const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-      console.log(userCredential);
+      const uid = userCredential.user.uid;
+      await database.ref(`users/${uid}`).set({
+        name: name,
+        age: age,
+        contactNo: contactNo,
+        gender: gender,
+        isOrganization: isOrganization,
+        organizationName: isOrganization ? organizationName : null,
+        address: isOrganization ? address : null
+      });
       navigate('/login')
     } catch (error) {
-      setError("User already signed up!")
+      setError("There was an error signing up. Please try again later.");
     }
   }
+  
+  const onFinish = (values) => {
+    console.log('Received values of form: ', values);
+    handleSignup(values)
+  };  
 
   return (
     <div className='signup-container'>

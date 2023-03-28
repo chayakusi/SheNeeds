@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { auth } from '../firebase';
-;
+
 
 function Navbar() {
   const [user, setUser] = useState(null);
@@ -27,6 +27,9 @@ function Navbar() {
     await auth.signOut();
   };
 
+ 
+
+
   return (
     <nav>
       {console.log(auth)}
@@ -37,6 +40,7 @@ function Navbar() {
         <li><a style={{textDecoration:"none"}} href="/">Home</a></li>
         {user ? 
           <>
+          
             <li>{user.email}</li>
             <li><a href = "" onClick={handleLogout} className="button">Logout</a></li>
           </>

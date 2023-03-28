@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Navbar from './Components/Navbar';
 
+
 const HomePage = () => {
   const numPeopleInNeed = 10000; // replace with actual data
   const numDonations = 500; // replace with actual data
