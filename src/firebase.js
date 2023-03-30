@@ -70,5 +70,20 @@ organizations.forEach((data, index) => {
 });
 //RANDOM CODE OVER
 
-export { auth, firestore, database };
+const getNearbyLocations = async (nearbyZipCodes) => {
+  // Fetch data from Firebase database
+  const snapshot = await database.ref('/organizations').once('value');
+  const data = snapshot.val();
+
+  const nearbyLocations = Object.values(data).filter((location) => {
+    const locationZipCode = location.zipcode.toString();
+    return nearbyZipCodes.includes(locationZipCode);
+  });  
+  return nearbyLocations;
+};
+
+// Export the function as a module
+
+
+export { auth, firestore, database, getNearbyLocations };
 export default firebase;

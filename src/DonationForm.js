@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 import Map from './Map';
 
+import { getNearbyLocations } from './firebase';
+
 const DonationForm = ({ type }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -24,7 +26,7 @@ const DonationForm = ({ type }) => {
 
   async function getNearbyZipCodes(zipcode) {
     const apiKey = "a68586b0-cd4a-11ed-bd6a-e3a5f3227fd9";
-    const radius = 50;
+    const radius = 10;
     const url = `https://app.zipcodebase.com/api/v1/radius?apikey=${apiKey}&code=${zipcode}&radius=${radius}&country=us`;
 
     try {
@@ -32,6 +34,7 @@ const DonationForm = ({ type }) => {
       const data = await response.json();
       const res = data.results.map((zip) => zip.code);
       console.log(res)
+      return res
     } catch (error) {
       console.error(error);
     }
@@ -45,31 +48,26 @@ const DonationForm = ({ type }) => {
       alert('Your request has been submitted!');
     }
 
-    //  getNearbyZipCodes(formData.zipCode)    //get list of nearby zipcodes
+    const nearbyZipCodes = await getNearbyZipCodes(formData.zipCode)
 
-    const locations = await fetchLocations(formData.zipCode);
+    const nearbyLocations = await getNearbyLocations(nearbyZipCodes);
+    const locations = await fetchLocations(nearbyLocations);
     setDropOffLocations(locations);
-  };
+  };  
 
-  const fetchLocations = async (zipCode) => {
-    // fetch locations based on zip code using the Google Maps API
-    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=-33.8670522%2C151.1957362&key=AIzaSyDTfhI-ZbPtq69HUxbt1WhMhW2KZo9lDTs`);
-    const data = await response.json();
-
-    // extract the latitude and longitude coordinates of the locations
-    const locations = data.results.map((result) => ({
-      lat: result.geometry.location.lat,
-      lng: result.geometry.location.lng,
-      formatted_address: result.formatted_address,
-    }));
-    
+  const fetchLocations = async (nearbyLocations) => {
+    const locations = nearbyLocations.map((result) => ({
+      lat: result.latitude,
+      lng: result.longitude,
+    }));   
     if (locations.length > 0) {
       const { lat, lng } = locations[0];
       setCenter({ lat, lng });
-      setZoom(14);
+      setZoom(10);
     }
     return locations;
   };
+  
 
   const handleMapClick = () => {
     setSelectedLocation(null);
