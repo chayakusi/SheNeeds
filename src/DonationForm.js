@@ -56,7 +56,6 @@ const DonationForm = ({ type }) => {
   };  
 
   const fetchLocations = async (nearbyLocations) => {
-    console.log(nearbyLocations);
     const locations = nearbyLocations.map((result) => ({
       lat: result.latitude,
       lng: result.longitude,
