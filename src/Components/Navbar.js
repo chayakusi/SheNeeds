@@ -32,7 +32,7 @@ function Navbar() {
 
   return (
     <nav>
-      {console.log(auth)}
+      {/* {console.log(auth)} */}
       <div className="logo">
         <h1>SheNeeds</h1>
       </div>
