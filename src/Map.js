@@ -21,7 +21,7 @@ const Map = ({ dropOffLocations, center, zoom, selectedLocation, onMapClick, onM
                 >
                     {selectedLocation && selectedLocation.lat === location.lat && selectedLocation.lng === location.lng && (
                     <InfoWindow position={{ lat: selectedLocation.lat, lng: selectedLocation.lng }} onCloseClick={() => onMarkerClick(null)}>
-                        <div>{selectedLocation.formatted_address}</div>
+                        <div>{selectedLocation.address}</div>
                     </InfoWindow>
                     )}
                 </Marker>

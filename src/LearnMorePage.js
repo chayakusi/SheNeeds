@@ -9,12 +9,12 @@ const LearnMorePage = () => {
       <Navbar />
       <Container className="learn-more-container">
         <Row>
-          <Col>
+        <Col>
             <h1>Menstruation and Its Impact</h1>
-            <p>Menstruation is a natural biological process that occurs in females every month. Unfortunately, menstruation is still considered taboo in many parts of the world, leading to a lack of awareness and support for females during this time. </p>
-            <p>In many developing countries, the lack of access to menstrual hygiene products, such as sanitary pads, can cause girls to miss school and even drop out altogether. Without proper menstrual hygiene, girls are at a higher risk of infections, reproductive health issues, and social isolation. </p>
-            <p>At our organization, we aim to break the stigma surrounding menstruation and provide girls with access to sanitary pads and other menstrual hygiene products so they can continue their education and reach their full potential.</p>
-          </Col>
+            <p>Menstruation is a natural biological process that occurs in females every month. During this time, the lining of the uterus is shed through the vagina in the form of blood and other fluids. Although menstruation is a natural process, it is often surrounded by shame and stigma, leading to a lack of awareness and support for females during this time.</p>
+            <p>Many girls and women around the world face challenges related to menstruation. In developing countries, the lack of access to menstrual hygiene products, such as sanitary pads, can cause girls to miss school and even drop out altogether. Without proper menstrual hygiene, girls are at a higher risk of infections, reproductive health issues, and social isolation. In developed countries, the cost of menstrual hygiene products can be prohibitive for low-income individuals, leading to difficulties in managing menstruation with dignity.</p>
+            <p>At our organization, we aim to break the stigma surrounding menstruation and provide girls and women with access to menstrual hygiene products so they can continue their education and reach their full potential. We believe that menstruation should not be a barrier to education, employment, or participation in society.</p>
+            </Col>
         </Row>
         <Row className="mt-5">
           <Col>
