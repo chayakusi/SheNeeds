@@ -36,5 +36,6 @@ Added Login, Signup, Navbar
 
 ### Bugs/Changes to be made
 
-The map doesn't highlight the locations though the API is getting hit and sending the data successfully.
-Currently just storing email, password in firebase. Have to store all other details.
+Currently we are randomly storing organization data.
+The click feature on map is not working
+The homepage data is static

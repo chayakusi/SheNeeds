@@ -33,7 +33,7 @@ const DonationForm = ({ type }) => {
       const response = await fetch(url);
       const data = await response.json();
       const res = data.results.map((zip) => zip.code);
-      console.log(res)
+      // console.log(res)
       return res
     } catch (error) {
       console.error(error);
