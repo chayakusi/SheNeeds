@@ -33,9 +33,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Added Home, Donate, and Request pages
 Added Login, Signup, Navbar
+Added LearnMore, Volunteer, Share pages
+Added Directions to Map
 
 ### Bugs/Changes to be made
 
-Currently we are randomly storing organization data.
-The click feature on map is not working
-The homepage data is static
+- [MAJOR] All the API keys are public as of now
+- Currently we are randomly storing organization data.
+- The homepage data is static
