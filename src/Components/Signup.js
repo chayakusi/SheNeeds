@@ -20,7 +20,7 @@ function Signup() {
   const getLatLong = async (address) => {
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       address
-    )}&key=AIzaSyDTfhI-ZbPtq69HUxbt1WhMhW2KZo9lDTs`;
+    )}&key=API_KEY`;
     return await fetch(url)
       .then((response) => response.json())
       .then((data) => {

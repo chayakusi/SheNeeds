@@ -33,7 +33,7 @@ const Map = ({ dropOffLocations, center, zoom }) => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDTfhI-ZbPtq69HUxbt1WhMhW2KZo9lDTs">
+    <LoadScript googleMapsApiKey="API_KEY">
       <div style={{ height: "400px", width: "100%" }}>
         <GoogleMap mapContainerStyle={{ height: "100%", width: "100%" }} center={center} zoom={zoom}>
           {dropOffLocations.map((location, index) => (
