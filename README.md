@@ -38,6 +38,5 @@ Added Directions to Map
 
 ### Bugs/Changes to be made
 
-- [MAJOR] All the API keys are public as of now
 - Currently we are randomly storing organization data.
 - The homepage data is static
